@@ -1,24 +1,20 @@
+/*
+Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
 import (
-	"fmt"
-	"log"
 	"os"
+	"os/exec"
 
-	"github.com/urfave/cli/v2"
+	"github.com/Marityr/gogit/cmd"
 )
 
 func main() {
-	app := &cli.App{
-		Name:  "gogit",
-		Usage: "fight the loneliness!",
-		Action: func(*cli.Context) error {
-			fmt.Println("Hello friend!")
-			return nil
-		},
-	}
+	cmdC := exec.Command("clear") //Linux example, its tested
+	cmdC.Stdout = os.Stdout
+	cmdC.Run()
 
-	if err := app.Run(os.Args); err != nil {
-		log.Fatal(err)
-	}
+	cmd.Execute()
 }
