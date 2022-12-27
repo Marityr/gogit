@@ -57,4 +57,4 @@ func GitStatus(dir string) int {
 	return 0
 }
 
-//TODO https://github.com/muesli/gitomatic/blob/master/main.go
+
